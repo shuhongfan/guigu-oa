@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/common.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/common-util/common-util.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/common-util/common-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/guigu-oa.iml" filepath="$PROJECT_DIR$/.idea/guigu-oa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/guigu-oa-parent.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/guigu-oa-parent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/model/model.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/model/model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/service-oa/service-oa.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/service-oa/service-oa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/service-util/service-util.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/service-util/service-util.iml" />
-      <module fileurl="file://$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/spring-security/spring-security.iml" filepath="$PROJECT_DIR$/代码/后端代码/guigu-oa-parent/common/spring-security/spring-security.iml" />
     </modules>
   </component>
 </project>

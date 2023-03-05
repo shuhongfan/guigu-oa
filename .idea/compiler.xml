@@ -2,11 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-security" />
         <module name="common-util" />
         <module name="model" />
         <module name="service-oa" />
@@ -14,12 +14,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="common" target="1.8" />
-      <module name="common-util" target="1.8" />
-      <module name="guigu-oa-parent" target="1.8" />
-      <module name="model" target="1.8" />
-      <module name="service-oa" target="1.8" />
-      <module name="service-util" target="1.8" />
       <module name="spring-security" target="1.8" />
     </bytecodeTargetLevel>
   </component>

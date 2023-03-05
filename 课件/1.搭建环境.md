@@ -1574,7 +1574,7 @@ public class Knife4jConfig {
 package com.atguigu.system.controller;
 
 import com.atguigu.system.service.SysRoleService;
-import com.atguigu.common.result.Result;
+import result.com.shf.common.Result;
 import com.atguigu.model.system.SysRole;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -1758,7 +1758,7 @@ int a = 10/0;
 ```java
 package com.atguigu.common.handler;
 
-import com.atguigu.common.result.Result;
+import result.com.shf.common.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -1810,7 +1810,7 @@ public Result error(ArithmeticException e){
 ```java
 package com.atguigu.common.execption;
 
-import com.atguigu.common.result.ResultCodeEnum;
+import result.com.shf.common.ResultCodeEnum;
 import lombok.Data;
 
 /**
