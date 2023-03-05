@@ -198,6 +198,15 @@ export const constantRoutes = [
     alwaysShow: true,
     children: [
       {
+        name: 'sysUser',
+        path: 'sysUser',
+        component: () => import('@/views/system/sysUser/list'),
+        meta: {
+          title: '用户管理',
+          icon: 'el-icon-s-custom'
+        }
+      },
+      {
         path: 'sysRole',
         component: () => import('@/views/system/sysRole/list'),
         meta: {
@@ -207,6 +216,7 @@ export const constantRoutes = [
       }
     ]
   },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

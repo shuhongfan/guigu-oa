@@ -186,7 +186,7 @@ export default {
       }).then(() => {
         // 点击确定，远程调用ajax
         // 遍历selection，将id取出放入id列表
-        let idList = []
+        const idList = []
         this.multipleSelection.forEach(item => idList.push(item.id))
         // 调用API
         return sysRole.batchRemove(idList)
