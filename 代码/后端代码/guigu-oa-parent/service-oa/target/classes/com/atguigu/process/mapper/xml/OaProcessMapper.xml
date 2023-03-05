@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.process.mapper.OaProcessMapper">
+
+    <select id="selectPage" resultType="com.atguigu.vo.process.ProcessVo">
+        select
+            a.id,a.process_code,a.user_id,a.process_template_id,a.process_type_id,a.title,a.description,a.form_values,a.process_instance_id,a.current_auditor,a.status,a.create_time,a.update_time,
+            b.name as processTemplateName,
+            c.name as processTypeName,
+            d.name
+        from oa_process a
+                 left join sys_user d on a.user_id =d.id
+                 left join oa_process_template b on a.process_template_id = b.id
+                 left join oa_process_type c on a.process_type_id = c.id
+        <where>
+            <if test="vo.keyword != null and vo.keyword != ''">
+                and (a.process_code like CONCAT('%',#{vo.keyword},'%') or
+                    a.title like CONCAT('%',#{vo.keyword},'%'))
+            </if>
+            <if test="vo.userId != null and vo.userId != ''">
+                and a.user_id = #{vo.userId}
+            </if>
+            <if test="vo.status != null and vo.status != ''">
+                and a.status = #{vo.status}
+            </if>
+            <if test="vo.createTimeBegin != null and vo.createTimeBegin != ''">
+                and a.create_time >= #{vo.createTimeBegin}
+            </if>
+            <if test="vo.createTimeEnd != null and vo.createTimeEnd != ''">
+                and a.create_time &lt;= #{vo.createTimeEnd}
+            </if>
+        </where>
+    </select>
+</mapper>

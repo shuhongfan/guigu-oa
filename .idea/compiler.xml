@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-security" />
+        <module name="common-util" />
+        <module name="model" />
+        <module name="service-oa" />
+        <module name="service-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
+      <module name="common-util" target="1.8" />
+      <module name="guigu-oa-parent" target="1.8" />
+      <module name="model" target="1.8" />
+      <module name="service-oa" target="1.8" />
+      <module name="service-util" target="1.8" />
+      <module name="spring-security" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="common-util" options="-parameters" />
+      <module name="guigu-oa-parent" options="-parameters" />
+      <module name="model" options="-parameters" />
+      <module name="service-oa" options="-parameters" />
+      <module name="service-util" options="-parameters" />
+      <module name="spring-security" options="-parameters" />
+    </option>
+  </component>
+</project>
