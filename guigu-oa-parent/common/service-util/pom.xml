@@ -19,6 +19,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>com.shf</groupId>
             <artifactId>common-util</artifactId>
             <version>1.0-SNAPSHOT</version>

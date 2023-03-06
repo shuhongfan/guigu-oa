@@ -1,10 +1,13 @@
 package com.shf.security.filter;
 
+import com.alibaba.fastjson.JSON;
 import com.shf.common.jwt.JwtHelper;
 import com.shf.common.result.ResponseUtil;
 import com.shf.common.result.Result;
 import com.shf.common.result.ResultCodeEnum;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -14,14 +17,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 认证解析token过滤器
  */
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
-    public TokenAuthenticationFilter() {
 
+    private RedisTemplate redisTemplate;
+
+    public TokenAuthenticationFilter(RedisTemplate redisTemplate) {
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
@@ -51,7 +60,19 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
             String useruame = JwtHelper.getUsername(token);
             logger.info("useruame:"+useruame);
             if (!StringUtils.isEmpty(useruame)) {
-                return new UsernamePasswordAuthenticationToken(useruame, null, Collections.emptyList());
+//                通过username从redis获取权限数据
+                String authString = (String) redisTemplate.opsForValue().get(useruame);
+
+//                把redis获取字符串权限数据转换成集合类型
+                if (!StringUtils.isEmpty(authString)) {
+                    List<Map> mapList = JSON.parseArray(authString, Map.class);
+
+                    List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
+                    mapList.forEach(map -> authorityList.add(new SimpleGrantedAuthority((String) map.get("authority"))));
+                    return new UsernamePasswordAuthenticationToken(useruame, null, authorityList);
+                } else {
+                    return new UsernamePasswordAuthenticationToken(useruame, null, Collections.emptyList());
+                }
             }
         }
         return null;

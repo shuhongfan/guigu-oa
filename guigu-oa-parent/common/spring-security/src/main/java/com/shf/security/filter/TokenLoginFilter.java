@@ -1,5 +1,6 @@
 package com.shf.security.filter;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shf.common.jwt.JwtHelper;
 import com.shf.common.result.ResponseUtil;
@@ -7,11 +8,11 @@ import com.shf.common.result.Result;
 import com.shf.common.result.ResultCodeEnum;
 import com.shf.security.custom.CustomUser;
 import com.shf.vo.system.LoginVo;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -20,16 +21,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
+    private RedisTemplate redisTemplate;
+
     /**
      * 构造方法
+     *
      * @param authenticationManager
+     * @param redisTemplate
      */
-    public TokenLoginFilter(AuthenticationManager authenticationManager) {
+    public TokenLoginFilter(AuthenticationManager authenticationManager, RedisTemplate redisTemplate) {
+        this.redisTemplate = redisTemplate;
         this.setAuthenticationManager(authenticationManager);
         this.setPostOnly(false);
         //指定登录接口及提交方式，可以指定任意路径
@@ -74,6 +79,9 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
 //        生成token
         String token = JwtHelper.createToken(customUser.getSysUser().getId(), customUser.getSysUser().getUsername());
+
+//        获取当前用户权限数据,放到redis里面
+        redisTemplate.opsForValue().set(customUser.getUsername(), JSON.toJSONString(customUser.getAuthorities()));
 
 //        返回
         HashMap<String, Object> map = new HashMap<>();
