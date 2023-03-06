@@ -2,7 +2,9 @@ package com.shf.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.shf.model.system.SysMenu;
+import com.shf.model.system.SysUser;
 import com.shf.vo.system.AssginMenuVo;
+import com.shf.vo.system.RouterVo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -33,4 +35,18 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param  assginMenuVo
      */
     void doAssign(AssginMenuVo assginMenuVo);
+
+    /**
+     * 根据用户id获取用户可以操作菜单列表
+     * @param userId
+     * @return
+     */
+    List<RouterVo> findUserMenuListByUser(Long userId);
+
+    /**
+     * 根据用户id获取用户可以操作菜单列表
+     * @param userId
+     * @return
+     */
+    List<String> findUserPermsByUserId(Long userId);
 }

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import hasBtnPermission from '@/utils/btn-permission'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -34,6 +34,7 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+Vue.prototype.$hasBP = hasBtnPermission
 
 new Vue({
   el: '#app',

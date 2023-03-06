@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.shf.auth.service.SysUserService;
 import com.shf.common.result.Result;
+import com.shf.common.utils.MD5;
 import com.shf.model.system.SysUser;
 import com.shf.vo.system.SysUserQueryVo;
 import io.swagger.annotations.Api;
@@ -63,6 +64,12 @@ public class SysUserController {
     @ApiOperation(value = "保存用户")
     @PostMapping("save")
     public Result save(@RequestBody SysUser user) {
+//        使用MD5工具类进行加密
+        String password = user.getPassword();
+        String encrypt = MD5.encrypt(password);
+        user.setPassword(encrypt);
+
+//        保存到数据库
         sysUserService.save(user);
         return Result.ok();
     }

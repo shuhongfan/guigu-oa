@@ -1,5 +1,6 @@
 package com.shf.auth.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.shf.auth.mapper.SysUserMapper;
 import com.shf.auth.service.SysUserService;
@@ -21,5 +22,18 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 //        设置修改值
         sysUser.setStatus(status);
         baseMapper.updateById(sysUser);
+    }
+
+    /**
+     * 根据用户名获取用户对象
+     * @param username
+     * @return
+     */
+    @Override
+    public SysUser getUserByUserName(String username) {
+        LambdaQueryWrapper<SysUser> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(SysUser::getUsername, username);
+        SysUser sysUser = baseMapper.selectOne(wrapper);
+        return sysUser;
     }
 }

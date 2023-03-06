@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.shf.auth.mapper.SysMenuMapper">
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="columns">
+        m.id,m.parent_id,m.name,m.type,m.path,m.component,m.perms,m.icon,m.sort_value,m.status,m.create_time,m.update_time,m.is_deleted
+    </sql>
+
+<select id="findMenuListByUserId" resultType="com.shf.model.system.SysMenu">
+    select distinct <include refid="columns" />
+    from sys_menu m
+             inner join sys_role_menu rm on m.id = rm.menu_id
+             inner join sys_user_role ur on rm.role_id = ur.role_id
+    where ur.user_id = #{userId}
+      and m.status = 1
+      and rm.is_deleted = 0
+      and ur.is_deleted = 0
+      and m.is_deleted = 0
+</select>
+</mapper>
