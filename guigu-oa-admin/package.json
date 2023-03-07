@@ -23,7 +23,9 @@
     "path-to-regexp": "2.4.0",
     "vue": "2.6.10",
     "vue-router": "3.0.6",
-    "vuex": "3.1.0"
+    "vuex": "3.1.0",
+    "@form-create/element-ui": "^2.5.17",
+    "@form-create/designer": "^1.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.4",

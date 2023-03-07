@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import hasBtnPermission from '@/utils/btn-permission'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
-
+import formCreate from '@form-create/element-ui'
+import FcDesigner from '@form-create/designer'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
@@ -35,6 +36,9 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 Vue.prototype.$hasBP = hasBtnPermission
+
+Vue.use(formCreate)
+Vue.use(FcDesigner)
 
 new Vue({
   el: '#app',
