@@ -1,0 +1,53 @@
+07-Mar-2023 13:05:41.590 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.84
+07-Mar-2023 13:05:41.593 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        Nov 16 2022 13:34:24 UTC
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.84.0
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 11
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           10.0
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              amd64
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     C:\Program Files\Java\jdk1.8.0_351\jre
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.8.0_351-b10
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+07-Mar-2023 13:05:41.594 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\conf\logging.properties
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+07-Mar-2023 13:05:41.595 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84
+07-Mar-2023 13:05:41.597 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84
+07-Mar-2023 13:05:41.597 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\temp
+07-Mar-2023 13:05:41.597 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 在java.library.path:[C:\Program Files\Java\jdk1.8.0_351\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Users\shuho\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk1.8.0_351\bin;C:\Program Files\Java\jdk1.8.0_351\jre\bin;C:\Users\shuho\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\shuho\AppData\Local\Programs\Python\Python311\;C:\Users\shuho\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.1\bin;;C:\Users\shuho\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm 2022.3\bin;;C:\Program Files\JetBrains\WebStorm 2022.3.1\bin;;C:\Program Files\JetBrains\DataGrip 2022.3.2\bin;;C:\Program Files\JetBrains\CLion 2022.3.1\bin;;C:\Program Files\JetBrains\GoLand 2022.3.1\bin;;C:\Users\shuho\AppData\Roaming\nvm;C:\Program Files\nodejs;.]上找不到基于APR的Apache Tomcat本机库，该库允许在生产环境中获得最佳性能
+07-Mar-2023 13:05:41.711 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+07-Mar-2023 13:05:41.724 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 387 ms
+07-Mar-2023 13:05:41.775 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+07-Mar-2023 13:05:41.776 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.84]
+07-Mar-2023 13:05:41.795 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR 正在部署web应用程序存档文件[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\activiti-explorer.war]
+07-Mar-2023 13:05:41.804 警告 [localhost-startStop-1] org.apache.catalina.startup.SetContextPropertiesRule.begin [SetContextPropertiesRule]{Context} Setting property 'antiJARLocking' to 'true' did not find a matching property.
+07-Mar-2023 13:05:45.507 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 至少有一个JAR被扫描用于TLD但尚未包含TLD。 为此记录器启用调试日志记录，以获取已扫描但未在其中找到TLD的完整JAR列表。 在扫描期间跳过不需要的JAR可以缩短启动时间和JSP编译时间。
+07-Mar-2023 13:05:50.376 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR web应用程序存档文件[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\activiti-explorer.war]的部署已在[8,579]ms内完成
+07-Mar-2023 13:05:50.377 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\docs]
+07-Mar-2023 13:05:50.400 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\docs]的部署已在[23]毫秒内完成
+07-Mar-2023 13:05:50.400 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\examples]
+07-Mar-2023 13:05:50.726 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\examples]的部署已在[325]毫秒内完成
+07-Mar-2023 13:05:50.726 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\host-manager]
+07-Mar-2023 13:05:50.765 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\host-manager]的部署已在[39]毫秒内完成
+07-Mar-2023 13:05:50.765 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\manager]
+07-Mar-2023 13:05:50.795 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\manager]的部署已在[30]毫秒内完成
+07-Mar-2023 13:05:50.795 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\ROOT]
+07-Mar-2023 13:05:50.818 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\shuho\IdeaProjects\guigu-oa\apache-tomcat-8.5.84\webapps\ROOT]的部署已在[23]毫秒内完成
+07-Mar-2023 13:05:50.824 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+07-Mar-2023 13:05:50.847 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 9122 ms
+07-Mar-2023 18:31:38.156 信息 [Thread-419] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+07-Mar-2023 18:31:38.330 信息 [Thread-419] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+07-Mar-2023 18:31:38.592 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web应用程序 [activiti-explorer] 注册了JDBC驱动程序 [org.h2.Driver]，但在Web应用程序停止时无法注销它。 为防止内存泄漏，JDBC驱动程序已被强制取消注册。
+07-Mar-2023 18:31:38.594 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads Web应用程序[activiti-explorer]似乎启动了一个名为[Batik CleanerThread]的线程，但未能停止它。这很可能会造成内存泄漏。线程的堆栈跟踪：[
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:150)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
+ org.apache.batik.util.CleanerThread.run(CleanerThread.java:106)]
+07-Mar-2023 18:31:38.594 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads Web应用程序[activiti-explorer]似乎启动了一个名为[H2 Close Delay ACTIVITI]的线程，但未能停止它。这很可能会造成内存泄漏。线程的堆栈跟踪：[
+ java.lang.Thread.sleep(Native Method)
+ org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:47)]
+07-Mar-2023 18:31:38.609 信息 [Thread-419] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+07-Mar-2023 18:31:38.619 信息 [Thread-419] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
