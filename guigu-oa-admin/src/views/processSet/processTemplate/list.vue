@@ -34,8 +34,8 @@
       <el-table-column label="操作" width="250" align="center">
         <template slot-scope="scope">
           <el-button type="text" size="mini" @click="show(scope.row)">查看审批设置</el-button>
-          <el-button type="text" size="mini" @click="edit(scope.row.id)" :disabled="$hasBP('bnt.processTemplate.templateSet')  === false">修改审批设置</el-button>
-          <el-button type="text" size="mini" @click="removeDataById(scope.row.id)" :disabled="$hasBP('bnt.processTemplate.remove')  === false">删除</el-button>
+          <el-button type="text" v-if="scope.row.status == 0" size="mini" @click="edit(scope.row.id)" :disabled="$hasBP('bnt.processTemplate.templateSet')  === false">修改审批设置</el-button>
+          <el-button type="text" v-if="scope.row.status == 0" size="mini" @click="removeDataById(scope.row.id)" :disabled="$hasBP('bnt.processTemplate.remove')  === false">删除</el-button>
           <el-button v-if="scope.row.status == 0" type="text" size="mini" @click="publish(scope.row.id)" :disabled="$hasBP('bnt.processTemplate.publish')  === false">发布</el-button>
         </template>
       </el-table-column>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.shf.auth.mapper.ProcessMapper">
+
+<select id="selectPage" resultType="com.shf.vo.process.ProcessVo">
+    select
+        op.id,op.process_code,op.user_id,op.process_template_id,op.process_type_id,op.title,op.description,op.form_values,op.process_instance_id,op.current_auditor,op.status,op.create_time,op.update_time,
+        su.name as processTemplateName,
+        opt.name as processTypeName,
+        opt2.name
+    from oa_process op
+    left join sys_user su on op.user_id=su.id
+    left join oa_process_template opt on op.process_template_id = opt.id
+    left join oa_process_type opt2 on op.process_type_id = opt2.id
+    <where>
+        <if test="vo.keyword!=null and vo.keyword!=''">
+            and (op.process_code like concat('%',#{vo.keyword},'%') or (op.title like concat('%',#{vo.keyword},'%')))
+        </if>
+        <if test="vo.userId!=null and vo.userId!=''">
+            and op.user_id=#{vo.userId}
+        </if>
+        <if test="vo.status!=null and vo.status!=''">
+            and op.status=#{vo.status}
+        </if>
+        <if test="vo.createTimeBegin!=null and vo.createTimeBegin!=''">
+            and op.create_time>=#{vo.createTimeBegin}
+        </if>
+        <if test="vo.createTimeEnd!=null and vo.createTimeEnd!=''">
+            and op.create_time &lt;= #{vo.createTimeEnd}
+        </if>
+    </where>
+    order by id desc;
+</select>
+</mapper>

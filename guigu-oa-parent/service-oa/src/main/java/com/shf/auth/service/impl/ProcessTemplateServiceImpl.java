@@ -6,13 +6,16 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.shf.auth.mapper.ProcessTemplateMapper;
+import com.shf.auth.service.ProcessService;
 import com.shf.auth.service.ProcessTemplateService;
 import com.shf.auth.service.ProcessTypeService;
 import com.shf.model.process.ProcessTemplate;
 import com.shf.model.process.ProcessType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,6 +28,9 @@ public class ProcessTemplateServiceImpl extends ServiceImpl<ProcessTemplateMappe
 
     @Autowired
     private ProcessTypeService processTypeService;
+
+    @Autowired
+    private ProcessService processService;
 
     /**
      * 获取分页列表
@@ -64,9 +70,15 @@ public class ProcessTemplateServiceImpl extends ServiceImpl<ProcessTemplateMappe
      * @param id
      */
     @Override
+    @Transactional
     public void publish(Long id) {
         ProcessTemplate processTemplate = baseMapper.selectById(id);
         processTemplate.setStatus(1);
         baseMapper.updateById(processTemplate);
+
+//        发布在线流程设计
+        if (!StringUtils.isEmpty(processTemplate.getProcessDefinitionPath())) {
+            processService.deployByZip(processTemplate.getProcessDefinitionPath());
+        }
     }
 }
