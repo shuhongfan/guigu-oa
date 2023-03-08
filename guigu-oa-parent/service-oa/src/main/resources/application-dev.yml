@@ -40,3 +40,9 @@ spring:
     history-level: full
     #校验流程文件，默认校验resources下的process 文件夹的流程文件
     check-process-definitions: true
+
+wechat:
+  mpAppId: wxe34a4fe291eafd29
+  mpAppSecret: ae327cb2b07b2a9cd87d78ac2b0c9896
+  # 授权回调获取用户信息接口地址
+  userInfoUrl: http://shuhongfan.51vip.biz:34479/admin/wechat/userInfo

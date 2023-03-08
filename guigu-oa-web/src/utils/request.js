@@ -3,7 +3,7 @@ import axios from "axios";
 // 创建axios实例
 const service = axios.create({
   // baseURL: "http://oa.atguigu.cn", // api 的 base_url
-  baseURL: "http://127.0.0.1:8800", // api 的 base_url
+  baseURL: "http://1055qa3111.goho.co:42484", // api 的 base_url
   timeout: 30000 // 请求超时时间
 });
 
@@ -24,7 +24,7 @@ service.interceptors.response.use(response => {
       // debugger
       // 替换# 后台获取不到#后面的参数
       let url = window.location.href.replace('#', 'guiguoa')
-      window.location = 'http://oa.atguigu.cn/admin/wechat/authorize?returnUrl=' + url
+      window.location = 'http://1055qa3111.goho.co:42484/admin/wechat/authorize?returnUrl=' + url
     } else {
       if (response.data.code == 200) {
         return response.data;
