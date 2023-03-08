@@ -48,7 +48,7 @@ export default {
         //全部展开
         this.activeNames = []
         this.list.forEach((item,index) => {
-          debugger
+          // debugger
           this.activeNames.push(index)
         })
       });

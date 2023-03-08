@@ -5,6 +5,7 @@ import com.shf.common.jwt.JwtHelper;
 import com.shf.common.result.ResponseUtil;
 import com.shf.common.result.Result;
 import com.shf.common.result.ResultCodeEnum;
+import com.shf.security.custom.LoginUserInfoHelper;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -57,11 +58,16 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
         String token = request.getHeader("token");
         logger.info("token:"+token);
         if (!StringUtils.isEmpty(token)) {
-            String useruame = JwtHelper.getUsername(token);
-            logger.info("useruame:"+useruame);
-            if (!StringUtils.isEmpty(useruame)) {
+            String username = JwtHelper.getUsername(token);
+            logger.info("username:"+username);
+
+            //通过ThreadLocal记录当前登录人信息
+            LoginUserInfoHelper.setUserId(JwtHelper.getUserId(token));
+            LoginUserInfoHelper.setUsername(username);
+
+            if (!StringUtils.isEmpty(username)) {
 //                通过username从redis获取权限数据
-                String authString = (String) redisTemplate.opsForValue().get(useruame);
+                String authString = (String) redisTemplate.opsForValue().get(username);
 
 //                把redis获取字符串权限数据转换成集合类型
                 if (!StringUtils.isEmpty(authString)) {
@@ -69,9 +75,9 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
                     List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
                     mapList.forEach(map -> authorityList.add(new SimpleGrantedAuthority((String) map.get("authority"))));
-                    return new UsernamePasswordAuthenticationToken(useruame, null, authorityList);
+                    return new UsernamePasswordAuthenticationToken(username, null, authorityList);
                 } else {
-                    return new UsernamePasswordAuthenticationToken(useruame, null, Collections.emptyList());
+                    return new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList());
                 }
             }
         }

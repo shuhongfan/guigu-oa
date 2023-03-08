@@ -7,6 +7,7 @@ import com.shf.vo.process.ProcessQueryVo;
 import com.shf.vo.process.ProcessVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import com.shf.model.process.Process;
 
 @Mapper
 public interface ProcessMapper extends BaseMapper<Process> {

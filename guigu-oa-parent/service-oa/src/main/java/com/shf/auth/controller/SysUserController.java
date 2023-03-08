@@ -94,4 +94,10 @@ public class SysUserController {
         sysUserService.updateStatus(id, status);
         return Result.ok();
     }
+
+    @ApiOperation(value = "获取当前用户基本信息")
+    @GetMapping("getCurrentUser")
+    public Result getCurrentUser() {
+        return Result.ok(sysUserService.getCurrentUser());
+    }
 }

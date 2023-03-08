@@ -3,6 +3,8 @@ package com.shf.auth.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.shf.model.system.SysUser;
 
+import java.util.Map;
+
 public interface SysUserService extends IService<SysUser> {
     /**
      * 更改用户状态
@@ -18,4 +20,11 @@ public interface SysUserService extends IService<SysUser> {
      * @return
      */
     SysUser getUserByUserName(String username);
+
+    /**
+     * 基本信息
+     * @return
+     */
+    Map<String, Object> getCurrentUser();
+
 }
